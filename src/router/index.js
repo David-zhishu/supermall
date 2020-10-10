@@ -6,6 +6,11 @@ const Categories = () => import('../views/Categories/Categories')
 const Cart = () => import('../views/Cart/Cart')
 const Profile = () => import('../views/Profile/Profile')
 
+const originalPush = VueRouter.prototype.replace
+VueRouter.prototype.replace = function replace(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
+
 Vue.use(VueRouter)
 
 const routes = [
