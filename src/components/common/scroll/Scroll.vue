@@ -18,7 +18,7 @@ export default {
       default: 0
     },
     pullUpLoad: {
-      type: Boolean.scroll,
+      type: Boolean,
       default: false
     }
   },

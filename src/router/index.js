@@ -5,6 +5,7 @@ const Home = () => import('../views/Home/Home')
 const Categories = () => import('../views/Categories/Categories')
 const Cart = () => import('../views/Cart/Cart')
 const Profile = () => import('../views/Profile/Profile')
+const Detail = () => import('../views/detail/Detail')
 
 const originalPush = VueRouter.prototype.replace
 VueRouter.prototype.replace = function replace(location) {
@@ -16,23 +17,27 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: "",
-    redirect: "/Home"
+    redirect: "/home"
   },
   {
-    path: "/Home",
+    path: "/home",
     component: Home,
   },
   {
-    path: "/Categories",
+    path: "/categories",
     component: Categories,
   },
   {
-    path: "/Cart",
+    path: "/cart",
     component: Cart,
   },
   {
-    path: "/Profile",
+    path: "/profile",
     component: Profile,
+  },
+  {
+    path: "/detail/:iid",
+    component: Detail
   }
 ]
 

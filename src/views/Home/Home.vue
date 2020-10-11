@@ -3,6 +3,13 @@
     <nav-bar class="home-nav">
       <template v-slot:center>购物街</template>
     </nav-bar>
+    <tab-control
+        v-show="isShow"
+        class="tab-control"
+        :titles="['流行', '新款', '精选']"
+        @tabClick="tabClick"
+        ref="tabControl1"
+      />
     <scroll
       class="content"
       ref="scroll"
@@ -11,14 +18,13 @@
       :pull-up-load="true"
       @pullingUp="loadMore"
     >
-      <home-swiper :banners="banners" />
+      <home-swiper :banners="banners" @swiperLoadImage="swiperLoadImage"/>
       <recommend-view :recommends="recommends" />
       <feature-view />
       <tab-control
-        class="tab-control"
         :titles="['流行', '新款', '精选']"
         @tabClick="tabClick"
-        ref="tabControl"
+        ref="tabControl2"
       />
       <goods-list :goods="showGoods" />
     </scroll>
@@ -54,6 +60,7 @@ export default {
       currentType: "pop",
       isShowBackTop: false,
       tabOffsetTop: 0,
+      isShow: false
     };
   },
   components: {
@@ -83,11 +90,10 @@ export default {
       // this.$refs.scroll && this.$refs.scroll.refresh();
       refresh();
     });
-    this.tabOffsetTop = this.$refs.tabControl.$el.offsetTop;
+    // this.tabOffsetTop = this.$refs.tabControl.$el.offsetTop;
   },
   methods: {
     // 事件监听方法
-
     tabClick(index) {
       switch (index) {
         case 0:
@@ -100,15 +106,23 @@ export default {
           this.currentType = "sell";
           break;
       }
+      this.$refs.tabControl1.currentIndex = index
+      this.$refs.tabControl2.currentIndex = index
     },
     backClick() {
       this.$refs.scroll.scrollTo(0, 0);
     },
     conentScroll(position) {
+      // 判断bacnTop是否显示
       this.isShowBackTop = position.y < -1000 ? true : false;
+      // 判断tabControl是否吸顶
+      this.isShow = position.y < -this.tabOffsetTop
     },
     loadMore() {
       this.getHomeGoods(this.currentType);
+    },
+    swiperLoadImage() {
+      this.tabOffsetTop = this.$refs.tabControl2.$el.offsetTop;
     },
     // 网络请求方法
     getHomeMultidata() {
@@ -152,24 +166,27 @@ export default {
 .home-nav {
   background-color: var(--color-tint);
   color: #fff;
-  position: fixed;
+  /* position: fixed;
   left: 0;
   right: 0;
   top: 0;
-  z-index: 9;
+  z-index: 9; */
 }
 
 .tab-control {
-  /* position: sticky;
-  top: 44px;
-  z-index: 8; */
+  position: relative;
+  /* top: 44px; */
+  z-index: 8;
   background-color: #fff;
 }
 
 .content {
-  position: relative;
+  position: absolute;
+  top: 44px;
+  left: 0;
+  right: 0;
   height: calc(100% - 93px);
   overflow: hidden;
-  margin-top: 44px;
 }
+
 </style>
