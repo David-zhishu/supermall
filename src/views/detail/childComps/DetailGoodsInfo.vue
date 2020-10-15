@@ -11,18 +11,21 @@
         <i style="right: 0px;" class="desc_dot"></i>
       </div>
     </div>
-    <div class="goods_info_key">
-      {{ detailInfo.detailImage[0].key }}
+    <div v-for="(item,index) in detailInfo.detailImage" :key="index">
+      <div class="goods_info_key">
+        {{ item.key }}
+      </div>
+      <div class="goods_info_imgs">
+        <img
+          :src="item1"
+          alt=""
+          v-for="(item1, index1) in item.list"
+          :key="index1"
+          @load="loadImg"
+        />
+      </div>
     </div>
-    <div class="goods_info_imgs">
-      <img
-        :src="item"
-        alt=""
-        v-for="(item, index) in detailInfo.detailImage[0].list"
-        :key="index"
-        @load="loadImg"
-      />
-    </div>
+
   </div>
 </template>
 <script>
