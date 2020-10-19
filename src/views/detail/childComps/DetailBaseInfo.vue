@@ -60,22 +60,22 @@ export default {
 }
 .goods_info_desc {
   font-size: 14px;
-  padding: 0.42rem 0.34rem;
+  padding: 7px 6px;
   color: #222;
 }
 .desc_line {
-  width: 3.5rem;
-  height: 0.04rem;
+  width: 56px;
+  height: 1px;
   background-color: gray;
   position: relative;
 }
 
 .desc_dot {
   position: absolute;
-  top: -0.1rem;
+  top: -1px;
   display: inline-block;
-  width: 0.21rem;
-  height: 0.21rem;
+  width: 4px;
+  height: 4px;
   background-color: black;
   border-radius: 50%;
 }
@@ -83,7 +83,7 @@ export default {
 .desc_text {
   font-size: 15px;
   font-weight: 600;
-  padding: 0.85rem 0;
+  padding: 14px 0;
   color: gray;
 }
 

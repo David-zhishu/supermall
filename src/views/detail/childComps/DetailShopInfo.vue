@@ -9,11 +9,11 @@
       <div class="score_left">
         <div class="score_sell">
           <div>{{ sellValue }}万</div>
-          <div style="font-size: 0.6rem;">总销量</div>
+          <div style="font-size: 12px;">总销量</div>
         </div>
         <div class="score_item">
           <div>{{ shop.goods }}</div>
-          <div style="font-size: 0.6rem;">全部宝贝</div>
+          <div style="font-size: 12px;">全部宝贝</div>
         </div>
       </div>
       <div class="score_right">
@@ -65,21 +65,21 @@ export default {
 
 <style scoped>
 #shop_info {
-  padding: 0.64rem 0.34rem;
-  border-bottom: 0.128rem solid rgba(128, 128, 128, 0.2);
-  font-size: 0.75rem;
+  padding: 10px 6px;
+  border-bottom: 2px solid rgba(128, 128, 128, 0.2);
+  font-size: 12px;
 }
 .shop_name img {
-  width: 1.7rem;
-  height: 1.7rem;
-  border: 0.042rem solid rgba(128, 128, 128, 0.5);
-  border-radius: 0.85rem;
+  width: 26px;
+  height: 26px;
+  border: 1px solid rgba(128, 128, 128, 0.5);
+  border-radius: 13px;
 }
 .shop_name span {
-  margin-left: 0.34rem;
+  margin-left: 6px;
   position: relative;
-  top: -0.64rem;
-  font-size: 0.768rem;
+  top: -10px;
+  font-size: 14px;
 }
 
 /**
@@ -87,7 +87,7 @@ export default {
   * 可左边用弹性盒子做，右边用table做
   */
 .score_info {
-  padding: 0px 0.512rem;
+  padding: 0px 8px;
   display: flex;
 }
 .score_left,
@@ -98,6 +98,7 @@ export default {
 .score_left {
   display: flex;
   align-items: center;
+  font-size: 12px;
 }
 .score_left > div {
   flex: 1;
@@ -105,28 +106,29 @@ export default {
 .score_sell,
 .score_item {
   text-align: center;
+  font-size: 14px;
 }
 .score_item {
-  border-right: 0.042rem solid gray;
+  border-right: 1px solid gray;
 }
 /**
   * 右边用table做的
   */
 .score_right > table {
   margin: 0 auto;
-  font-size: 0.64rem;
-  border-spacing: 0.42rem;
+  font-size: 12px;
+  border-spacing: 4px;
 }
 /**
   * 进店逛逛的样式
   */
 .come_shop {
-  width: 6.4rem;
-  height: 1.28rem;
-  line-height: 1.28rem;
+  width: 102px;
+  height: 20px;
+  line-height: 20px;
   text-align: center;
-  border-radius: 0.42rem;
+  border-radius: 4px;
   background-color: rgba(128, 128, 128, 0.3);
-  margin: 0 auto;
+  margin: 4px auto;
 }
 </style>

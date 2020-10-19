@@ -14,7 +14,7 @@ export default {
  props: {
    isChecked: {
      type: Boolean,
-     default: true
+     default: false
    }
  }
 }
@@ -23,7 +23,7 @@ export default {
 <style scoped>
 .check-button {
   border-radius: 50%;
-  border: 1px solid #aaa;
+  border: 1px solid #ccc;
 }
 
 .check {

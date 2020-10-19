@@ -33,7 +33,6 @@ export default {
  },
  methods: {
    addToCart() {
-     alert('已添加至购物车')
      this.$emit('addToCart')
    }
  }

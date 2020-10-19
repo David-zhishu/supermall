@@ -42,6 +42,7 @@ import {
 } from "network/detail";
 import { debounce } from "common/utils";
 import { backTopMixin } from "common/mixin"
+import { mapActions, mapGetters } from "vuex"
 
 export default {
   name: "Detail",
@@ -126,6 +127,7 @@ export default {
   },
   updated() {},
   methods: {
+    ...mapActions(['addCart']),
     swiperLoadImage() {
       this.$refs.scroll && this.$refs.scroll.refresh();
     },
@@ -154,7 +156,12 @@ export default {
       product.price = this.goods.realPrice;
       product.iid = this.iid;
       //添加到购物车
-      this.$store.dispatch('addCart',product)
+      // this.$store.dispatch('addCart',product).then(res => {
+      //   console.log(res);
+      // })
+      this.addCart(product).then(res => {
+        this.$toast.show('已添加至购物车',1500)
+      })
     }
   },
 };

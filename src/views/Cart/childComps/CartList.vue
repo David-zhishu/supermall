@@ -32,11 +32,11 @@ export default {
 
 <style scoped>
 .cart-list {
-  height: 100vh;
+  height: calc(100% -  44px - 89px);
 }
 
 .content {
-  height: calc(100% - 44px - 49px);
+  height: 100%;
   overflow: hidden;
 }
 </style>

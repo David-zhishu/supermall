@@ -1,6 +1,7 @@
 export default {
   addCart(context,payload) {
-    let oldProduct = null;
+    return new Promise((resolve,reject) => {
+      let oldProduct = null;
     for(let item of context.state.cartList) {      
       if(item.iid === payload.iid) {
         oldProduct = item
@@ -8,9 +9,12 @@ export default {
     }
     if(oldProduct) {
       context.commit('addCounter',oldProduct)
+      resolve('新')
     }else {
       payload.count = 1;
       context.commit('addToCart',payload)
-    }      
+      resolve('旧')
+    } 
+    })     
   }
 }

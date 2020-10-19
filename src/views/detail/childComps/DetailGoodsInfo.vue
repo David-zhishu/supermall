@@ -47,38 +47,38 @@ export default {
 </script>
 <style scoped>
 #detail_goods_info {
-  font-size: 0.68rem;
+  font-size: 12px;
 }
 .goods_info_desc {
-  font-size: 0.6rem;
-  padding: 0.42rem 0.34rem;
+  font-size: 12px;
+  padding: 6px 6px;
 }
 .desc_line {
-  width: 3.5rem;
-  height: 0.04rem;
+  width: 56px;
+  height: 1px;
   background-color: gray;
   position: relative;
 }
 
 .desc_dot {
   position: absolute;
-  top: -0.1rem;
+  top: -1px;
   display: inline-block;
-  width: 0.21rem;
-  height: 0.21rem;
+  width: 4px;
+  height: 4px;
   background-color: black;
   border-radius: 50%;
 }
 
 .desc_text {
-  font-size: 0.75rem;
-  text-indent: 2em;
-  padding: 0.85rem 0;
+  font-size: 12px;
+  text-indent: 32px;
+  padding: 14px 0;
   color: gray;
 }
 
 .goods_info_key {
-  padding: 0.42rem 0.34rem;
+  padding: 6px;
 }
 .goods_info_imgs img {
   width: 100%;

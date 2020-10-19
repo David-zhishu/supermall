@@ -41,36 +41,36 @@ export default {
 </script>
 <style>
 #detail_params {
-  font-size: 0.65rem;
-  padding: 0.42rem 0.34rem;
-  border-bottom: 0.3rem solid rgba(128, 128, 128, 0.2);
+  font-size: 12px;
+  padding: 6px;
+  border-bottom: 5px solid rgba(128, 128, 128, 0.2);
 }
 
 .params_rule,
 .params_set {
-  border-bottom: 0.1rem solid rgba(128, 128, 128, 0.5);
+  border-bottom: 2px solid rgba(128, 128, 128, 0.5);
   border-collapse: collapse; /* 可以合并邻近的边框，且可以让tr显示出边框 */
   margin: 0 auto;
-  margin-bottom: 0.42rem;
-  width: 22.568rem;
+  margin-bottom: 7px;
+  width: 360px;
 }
 .params_rule tr,
 .params_set tr {
-  border-bottom: 0.04rem solid rgba(128, 128, 128, 0.5);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.5);
 }
 
 .params_rule th {
   text-align: left;
-  padding-right: 1rem;
+  padding-right: 16px;
   white-space: nowrap;
 }
 .params_rule td {
-  padding: 0.5rem;
+  padding: 8px;
 }
 
 .params_set th {
   text-align: left;
-  padding: 0.5rem 3.5rem 0.5rem 0rem;
+  padding: 8px 56px 8px 0;
   white-space: nowrap;
 }
 .params_set td {

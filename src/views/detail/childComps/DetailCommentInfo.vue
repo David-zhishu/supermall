@@ -64,7 +64,7 @@ export default {
 <style scoped>
 .comment-info {
   padding: 8px;
-  border-bottom: 0.3rem solid rgba(128, 128, 128, 0.2);
+  border-bottom: 5px solid rgba(128, 128, 128, 0.2);
   margin-bottom: 10px;
 }
 
@@ -74,7 +74,7 @@ export default {
   justify-content: space-between;
   line-height: 52px;
   font-size: 14px;
-  border-bottom: 0.15rem solid rgba(128, 128, 128, 0.2);
+  border-bottom: 3px solid rgba(128, 128, 128, 0.2);
 }
 
 .header-more {
