@@ -66,6 +66,8 @@ export default {
      }else
      if(!flag) {
        this.$toast.show('请选择商品',1500)
+     }else {
+       this.$toast.show('结算功能尚未开通 请小主稍候',2500)
      }
    }
  }

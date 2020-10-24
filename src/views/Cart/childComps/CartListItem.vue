@@ -11,7 +11,7 @@
       <div class="item-desc">{{product.desc}}</div>
       <div class="info-bottom">
         <div class="item-price">单价：{{product.price}}</div>
-        <div class="item-count">数量：{{product.count}}</div>
+        <div class="item-count">数量：<button class="plus" @click="plus">+</button>{{product.count}}<button class="min" @click="min"><span>-</span></button></div>
       </div>
     </div>
  </div>
@@ -40,6 +40,16 @@ export default {
  methods: {
    checkClick() {
      this.product.checked = !this.product.checked
+   },
+   plus() {
+     this.product.count++
+   },
+   min() {
+     if(this.product.count==1) {
+       this.$toast.show('不能再减了',1500)
+     }else {
+     this.product.count--
+     }
    }
  }
 }
@@ -107,4 +117,23 @@ export default {
   left: 10px;
   right: 10px;
 }
+
+.item-count {
+  display: flex;
+}
+
+.item-count button {
+  height: 16px;
+  width: 16px;
+  margin: 0 2px;
+  border: none;
+  border-radius: 2px;
+  outline: none;
+}
+
+.item-count button span {
+  position: relative;
+  top: 0;
+}
+
 </style>

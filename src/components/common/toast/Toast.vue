@@ -49,6 +49,7 @@ export default {
   border-radius: 4px;
   background-color: rgba(0,0,0,.7);
   color: #eee;
+  text-align: center;
 }
 
 </style>

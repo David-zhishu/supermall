@@ -16,7 +16,7 @@
    </div>
    <div class="bar-item bar-right">
      <div class="cart" @click="addToCart">加入购物车</div>
-     <div class="buy">购买</div>
+     <div class="buy" @click="purchase">购买</div>
    </div>
  </div>
 </template>
@@ -34,6 +34,9 @@ export default {
  methods: {
    addToCart() {
      this.$emit('addToCart')
+   },
+   purchase() {
+     this.$toast.show('结算功能尚未开通 请小主稍候',2500)
    }
  }
 }
@@ -77,7 +80,7 @@ export default {
 }
 
 .bar-left .service {
-  background-position: 0 -54px;
+  background-position: 0 -52px;
 }
 
 .bar-left .shop {
